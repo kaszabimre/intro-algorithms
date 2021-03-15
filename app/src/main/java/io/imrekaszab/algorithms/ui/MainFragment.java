@@ -40,7 +40,7 @@ public class MainFragment extends Fragment {
 
         AlgorithmsAdapter adapter = new AlgorithmsAdapter();
 
-        mainViewModel.algorithms
+        mainViewModel.getAlgorithms()
             .observe(getViewLifecycleOwner(), adapter::setItems);
 
         binding.mainRecyclerView.setAdapter(adapter);
