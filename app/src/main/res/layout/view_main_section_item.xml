@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="io.imrekaszab.algorithms.model.item.SectionAlgorithmItemModel" />
+            type="io.imrekaszab.algorithms.data.model.item.SectionAlgorithmItemModel" />
     </data>
 
     <TextView

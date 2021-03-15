@@ -8,7 +8,7 @@
 
         <variable
             name="model"
-            type="io.imrekaszab.algorithms.model.item.AlgorithmItemModel" />
+            type="io.imrekaszab.algorithms.data.model.item.AlgorithmItemModel" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -1,4 +1,4 @@
-package io.imrekaszab.algorithms.model
+package io.imrekaszab.algorithms.data.model
 
 import androidx.annotation.StringRes
 import io.imrekaszab.algorithms.R

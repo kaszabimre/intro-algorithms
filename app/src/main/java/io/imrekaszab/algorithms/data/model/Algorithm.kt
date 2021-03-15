@@ -1,4 +1,4 @@
-package io.imrekaszab.algorithms.model
+package io.imrekaszab.algorithms.data.model
 
 abstract class Algorithm {
     abstract val type: AlgorithmType?

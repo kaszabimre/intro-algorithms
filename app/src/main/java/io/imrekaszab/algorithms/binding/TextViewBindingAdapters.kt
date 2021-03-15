@@ -3,8 +3,8 @@ package io.imrekaszab.algorithms.binding
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import io.imrekaszab.algorithms.R
-import io.imrekaszab.algorithms.model.Algorithm
-import io.imrekaszab.algorithms.model.AlgorithmType
+import io.imrekaszab.algorithms.data.model.Algorithm
+import io.imrekaszab.algorithms.data.model.AlgorithmType
 
 @BindingAdapter("title")
 fun TextView.bindTitleToTextView(model: Algorithm?) {
