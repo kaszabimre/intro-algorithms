@@ -37,8 +37,8 @@ android {
 dependencies {
 
     // AndroidX
-    implementation "androidx.appcompat:appcompat:$appcompat"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+    implementation "androidx.appcompat:appcompat:$androidx_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment:$navigation_version"
@@ -50,6 +50,7 @@ dependencies {
 
     // UI
     implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
 
     // Test
     testImplementation "junit:junit:$junit"
