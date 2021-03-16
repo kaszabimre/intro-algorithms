@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asFlow
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import io.imrekaszab.algorithms.BR
 import io.imrekaszab.algorithms.R
@@ -37,11 +38,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
         val adapter = AlgorithmsAdapter()
 
+        adapter.setOnItemClickedAction { mainViewModel.select(it) }
+
         binding.mainRecyclerView.adapter = adapter
 
         mainViewModel.algorithms.asFlow()
             .onEach { adapter.setItems(it) }
             .launchIn(viewLifecycleScope)
 
+        mainViewModel.navigateToDetailsSharedFlow
+            .onEach { findNavController().navigate(R.id.toDetailsFragment) }
+            .launchIn(viewLifecycleScope)
     }
 }

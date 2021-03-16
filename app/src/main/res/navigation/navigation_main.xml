@@ -8,5 +8,16 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="io.imrekaszab.algorithms.ui.MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/toDetailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="io.imrekaszab.algorithms.ui.DetailsFragment"
+        tools:layout="@layout/fragment_details" />
 </navigation>
