@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Algorithms</string>
+
+    <string name="algorithm_list_item_name_format">%s</string>
+
+    <string name="algorithm_list_section_item_sort">Sort algorithms</string>
+    <string name="algorithm_list_section_item_search">Search algorithms</string>
+
+    <string name="algorithm_list_item_performance_title">Big(O)</string>
+    <string name="algorithm_list_item_performance_constant">O(1)</string>
+    <string name="algorithm_list_item_performance_logn">O(logn)</string>
+    <string name="algorithm_list_item_performance_linear">O(n)</string>
+    <string name="algorithm_list_item_performance_nlogn">O(nlogn)</string>
+    <string name="algorithm_list_item_performance_quadratic">O(n\u00B2)</string>
+
+    <string name="algorithm_list_item_bubble">Bubble sort</string>
+    <string name="algorithm_list_item_selection">Selection sort</string>
+    <string name="algorithm_list_item_merge">Merge sort</string>
+
+    <string name="details_sort_button_text">SORT</string>
 </resources>

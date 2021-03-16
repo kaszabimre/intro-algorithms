@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="io.imrekaszab.algorithms.data.model.item.SectionAlgorithmItemModel" />
+    </data>
+
+    <TextView
+        android:id="@+id/sectionItemTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_default"
+        bind:sectionTitle="@{model.type}"
+        tools:text="@string/algorithm_list_item_bubble" />
+
+</layout>
