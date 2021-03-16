@@ -8,14 +8,14 @@ abstract class SortAlgorithm(val intArray: IntArray) : Algorithm() {
 
     abstract suspend fun sort(outputFlow: MutableStateFlow<String>)
 
-    fun swap(array: IntArray, i: Int, j: Int) {
+    fun swap(i: Int, j: Int) {
         if (i == j) {
             return
         }
 
-        val temp = array[i]
-        array[i] = array[j]
-        array[j] = temp
+        val temp = intArray[i]
+        intArray[i] = intArray[j]
+        intArray[j] = temp
     }
 
     suspend fun printCurrentState(outputFlow: MutableStateFlow<String>) {
