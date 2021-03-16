@@ -15,6 +15,7 @@
 
     <string name="algorithm_list_item_bubble">Bubble sort</string>
     <string name="algorithm_list_item_selection">Selection sort</string>
+    <string name="algorithm_list_item_merge">Merge sort</string>
 
     <string name="details_sort_button_text">SORT</string>
 </resources>
