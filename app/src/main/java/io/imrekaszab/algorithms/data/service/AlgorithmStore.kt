@@ -5,5 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface AlgorithmStore {
     fun getSelected(): Flow<Algorithm>
+    fun getOutput(): Flow<String>
     fun getAlgorithmList(): Flow<List<Algorithm>>
 }

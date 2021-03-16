@@ -7,4 +7,5 @@
     <string name="algorithm_list_section_item_search">Search algorithms</string>
 
     <string name="algorithm_list_item_bubble">Bubble sort</string>
+    <string name="details_sort_button_text">SORT</string>
 </resources>

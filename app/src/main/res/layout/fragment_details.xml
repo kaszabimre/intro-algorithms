@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,8 +9,39 @@
             type="io.imrekaszab.algorithms.viewmodel.DetailsViewModel" />
     </data>
 
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detailsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:textSize="18sp"
+                bind:title="@{vm.algorithm}" />
+
+            <Button
+                android:id="@+id/detailsSortButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_tiny"
+                android:text="@string/details_sort_button_text" />
+
+            <TextView
+                android:id="@+id/detailsOutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default"
+                android:gravity="center_horizontal"
+                android:text="@{vm.output}" />
+        </LinearLayout>
+    </ScrollView>
 
 </layout>

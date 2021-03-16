@@ -12,8 +12,9 @@ import io.imrekaszab.algorithms.R
 import io.imrekaszab.algorithms.databinding.FragmentDetailsBinding
 import io.imrekaszab.algorithms.viewmodel.DetailsViewModel
 
+
 @AndroidEntryPoint
-class DetailsFragment : Fragment(R.layout.fragment_main) {
+class DetailsFragment : Fragment(R.layout.fragment_details) {
 
     private val detailsViewModel by viewModels<DetailsViewModel>()
 
@@ -26,5 +27,13 @@ class DetailsFragment : Fragment(R.layout.fragment_main) {
         binding.executePendingBindings()
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.detailsSortButton.setOnClickListener {
+            detailsViewModel.submit()
+        }
     }
 }
