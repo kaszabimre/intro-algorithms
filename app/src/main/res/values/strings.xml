@@ -15,7 +15,13 @@
 
     <string name="algorithm_list_item_bubble">Bubble sort</string>
     <string name="algorithm_list_item_selection">Selection sort</string>
+    <string name="algorithm_list_item_insertion">Insertion sort</string>
+    <string name="algorithm_list_item_shell">Shell sort</string>
     <string name="algorithm_list_item_merge">Merge sort</string>
+    <string name="algorithm_list_item_quick">Quick sort</string>
+    <string name="algorithm_list_item_counting">Counting sort</string>
+    <string name="algorithm_list_item_radix">Radix sort</string>
+    <string name="algorithm_list_item_stable_counting">Stable counting sort</string>
 
     <string name="details_sort_button_text">SORT</string>
 </resources>

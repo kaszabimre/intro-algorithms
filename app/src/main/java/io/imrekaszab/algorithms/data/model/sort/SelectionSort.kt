@@ -1,8 +1,8 @@
-package io.imrekaszab.algorithms.data.model
+package io.imrekaszab.algorithms.data.model.sort
 
 import androidx.annotation.StringRes
 import io.imrekaszab.algorithms.R
-import kotlinx.coroutines.flow.MutableStateFlow
+import io.imrekaszab.algorithms.data.model.AlgorithmPerformance
 
 class SelectionSort(array: IntArray) : SortAlgorithm(array) {
     @StringRes
@@ -10,8 +10,8 @@ class SelectionSort(array: IntArray) : SortAlgorithm(array) {
 
     override val performance = AlgorithmPerformance.QUADRATIC
 
-    override suspend fun sort(outputFlow: MutableStateFlow<String>) {
-        printCurrentState(outputFlow)
+    override suspend fun sort() {
+        printCurrentState()
         for (lastUnsortedIndex in intArray.size - 1 downTo 1) {
             var largest = 0
             for (i in 1..lastUnsortedIndex) {
@@ -20,7 +20,7 @@ class SelectionSort(array: IntArray) : SortAlgorithm(array) {
                 }
             }
             swap(largest, lastUnsortedIndex)
-            printCurrentState(outputFlow)
+            printCurrentState()
         }
     }
 }

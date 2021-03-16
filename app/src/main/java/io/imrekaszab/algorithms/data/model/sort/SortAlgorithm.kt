@@ -1,12 +1,15 @@
-package io.imrekaszab.algorithms.data.model
+package io.imrekaszab.algorithms.data.model.sort
 
+import io.imrekaszab.algorithms.data.model.Algorithm
+import io.imrekaszab.algorithms.data.model.AlgorithmType
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 
 abstract class SortAlgorithm(val intArray: IntArray) : Algorithm() {
     override val type = AlgorithmType.SORT
+    lateinit var outputStateFlow: MutableStateFlow<String>
 
-    abstract suspend fun sort(outputFlow: MutableStateFlow<String>)
+    abstract suspend fun sort()
 
     fun swap(i: Int, j: Int) {
         if (i == j) {
@@ -18,15 +21,15 @@ abstract class SortAlgorithm(val intArray: IntArray) : Algorithm() {
         intArray[j] = temp
     }
 
-    suspend fun printCurrentState(outputFlow: MutableStateFlow<String>) {
+    suspend fun printCurrentState() {
         var currentText = ""
         for (index in intArray.indices) {
             currentText = currentText + intArray[index].toString() + "   "
         }
 
-        val state = outputFlow.value + "\n\n" + currentText
+        val state = outputStateFlow.value + "\n\n" + currentText
 
-        outputFlow.emit(state)
+        outputStateFlow.emit(state)
         delay(300L)
     }
 }

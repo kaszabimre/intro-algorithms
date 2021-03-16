@@ -1,8 +1,8 @@
-package io.imrekaszab.algorithms.data.model
+package io.imrekaszab.algorithms.data.model.sort
 
 import androidx.annotation.StringRes
 import io.imrekaszab.algorithms.R
-import kotlinx.coroutines.flow.MutableStateFlow
+import io.imrekaszab.algorithms.data.model.AlgorithmPerformance
 
 class MergeSort(array: IntArray) : SortAlgorithm(array) {
     @StringRes
@@ -10,22 +10,22 @@ class MergeSort(array: IntArray) : SortAlgorithm(array) {
 
     override val performance = AlgorithmPerformance.N_LOG_STAR_N
 
-    override suspend fun sort(outputFlow: MutableStateFlow<String>) {
-        printCurrentState(outputFlow)
-        mergeSort(intArray, 0, intArray.size, outputFlow)
+    override suspend fun sort() {
+        printCurrentState()
+        mergeSort(intArray, 0, intArray.size)
     }
 
-    private suspend fun mergeSort(input: IntArray, start: Int, end: Int, outputFlow: MutableStateFlow<String>) {
+    private suspend fun mergeSort(input: IntArray, start: Int, end: Int) {
         if (end - start < 2) {
             return
         }
         val mid = (start + end) / 2
-        mergeSort(input, start, mid, outputFlow)
-        printCurrentState(outputFlow)
-        mergeSort(input, mid, end, outputFlow)
-        printCurrentState(outputFlow)
+        mergeSort(input, start, mid)
+        printCurrentState()
+        mergeSort(input, mid, end)
+        printCurrentState()
         merge(input, start, mid, end)
-        printCurrentState(outputFlow)
+        printCurrentState()
     }
 
     private fun merge(input: IntArray, start: Int, mid: Int, end: Int) {

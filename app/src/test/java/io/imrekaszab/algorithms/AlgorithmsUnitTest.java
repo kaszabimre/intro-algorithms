@@ -8,7 +8,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import io.bloco.faker.Faker;
 import io.imrekaszab.algorithms.data.model.AlgorithmPerformance;
-import io.imrekaszab.algorithms.data.model.BubbleSort;
+import io.imrekaszab.algorithms.data.model.sort.BubbleSort;
 import io.imrekaszab.algorithms.data.service.MockAlgorithmFactory;
 
 import static com.google.common.truth.Truth.assertThat;

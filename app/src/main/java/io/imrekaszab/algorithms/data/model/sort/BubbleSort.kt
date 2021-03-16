@@ -1,8 +1,8 @@
-package io.imrekaszab.algorithms.data.model
+package io.imrekaszab.algorithms.data.model.sort
 
 import androidx.annotation.StringRes
 import io.imrekaszab.algorithms.R
-import kotlinx.coroutines.flow.MutableStateFlow
+import io.imrekaszab.algorithms.data.model.AlgorithmPerformance
 
 class BubbleSort(array: IntArray) : SortAlgorithm(array) {
     @StringRes
@@ -10,12 +10,12 @@ class BubbleSort(array: IntArray) : SortAlgorithm(array) {
 
     override val performance = AlgorithmPerformance.QUADRATIC
 
-    override suspend fun sort(outputFlow: MutableStateFlow<String>) {
+    override suspend fun sort() {
         for (lastUnsortedIndex in intArray.size - 1 downTo 1) {
             for (i in 0 until lastUnsortedIndex) {
                 if (intArray[i] > intArray[i + 1]) {
                     swap(i, i + 1)
-                    printCurrentState(outputFlow)
+                    printCurrentState()
                 }
             }
         }

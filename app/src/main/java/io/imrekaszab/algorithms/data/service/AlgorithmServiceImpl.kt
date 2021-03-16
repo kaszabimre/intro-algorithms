@@ -2,7 +2,7 @@ package io.imrekaszab.algorithms.data.service
 
 import io.imrekaszab.algorithms.data.model.Algorithm
 import io.imrekaszab.algorithms.data.model.AlgorithmHolder
-import io.imrekaszab.algorithms.data.model.SortAlgorithm
+import io.imrekaszab.algorithms.data.model.sort.SortAlgorithm
 import io.imrekaszab.algorithms.utils.flowOf
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -29,6 +29,7 @@ class AlgorithmServiceImpl @Inject constructor(
         .flowOn(Dispatchers.Default)
 
     override suspend fun select(algorithm: Algorithm) = withContext(Dispatchers.Default) {
+        outputStateFlow.emit("")
         algorithmHolder.setItem(algorithm)
 
         return@withContext
@@ -36,6 +37,10 @@ class AlgorithmServiceImpl @Inject constructor(
 
     override suspend fun submit() = withContext(Dispatchers.Default) {
         val algorithm = algorithmHolder.getItem()
-        (algorithm as SortAlgorithm).sort(outputStateFlow)
+
+        if (algorithm is SortAlgorithm) {
+            algorithm.outputStateFlow = outputStateFlow
+            algorithm.sort()
+        }
     }
 }
