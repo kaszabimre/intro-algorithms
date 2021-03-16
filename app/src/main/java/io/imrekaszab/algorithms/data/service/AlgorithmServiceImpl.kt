@@ -30,6 +30,8 @@ class AlgorithmServiceImpl @Inject constructor(
 
     override suspend fun select(algorithm: Algorithm) = withContext(Dispatchers.Default) {
         algorithmHolder.setItem(algorithm)
+
+        return@withContext
     }
 
     override suspend fun submit() = withContext(Dispatchers.Default) {

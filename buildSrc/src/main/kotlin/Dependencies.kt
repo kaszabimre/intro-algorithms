@@ -22,6 +22,7 @@ object Versions {
     const val runner = "1.4.0-alpha05"
     const val espresso = "3.4.0-alpha05"
     const val mockito = "1.10.19"
+    const val truth = "1.1.2"
     const val testCore = "1.4.0-alpha05"
 }
 
@@ -79,5 +80,6 @@ object Libraries {
         const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
         const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Versions.espresso}"
         const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
+        const val truth = "com.google.truth:truth:${Versions.truth}"
     }
 }

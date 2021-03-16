@@ -1,5 +1,6 @@
 package io.imrekaszab.algorithms.data.service
 
+import androidx.annotation.VisibleForTesting
 import io.bloco.faker.Faker
 import io.imrekaszab.algorithms.data.model.BubbleSort
 import io.imrekaszab.algorithms.data.model.MergeSort
@@ -14,10 +15,13 @@ class MockAlgorithmFactory @Inject constructor(private val faker: Faker) {
         mergeSort()
     )
 
-    private fun bubbleSort() = BubbleSort(getIntArray())
+    @VisibleForTesting
+    fun bubbleSort() = BubbleSort(getIntArray())
+
     private fun selectionSort() = SelectionSort(getIntArray())
     private fun mergeSort() = MergeSort(getIntArray())
 
-    private fun getIntArray() = IntRange(1, 10)
+    @VisibleForTesting
+    fun getIntArray() = IntRange(1, 10)
         .map { faker.number.between(-20, 20) }.toIntArray()
 }

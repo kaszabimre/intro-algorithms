@@ -58,6 +58,10 @@ android {
             )
         }
     }
+
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+    }
 }
 
 dependencies {
@@ -92,6 +96,7 @@ dependencies {
     // Test
     testImplementation(Libraries.Test.junit)
     testImplementation(Libraries.Test.mockito)
+    testImplementation(Libraries.Test.truth)
     androidTestImplementation(Libraries.Test.espressoCore)
     androidTestImplementation(Libraries.Test.espressoContrib)
     androidTestImplementation(Libraries.Test.runner)
