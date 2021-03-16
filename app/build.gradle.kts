@@ -91,8 +91,12 @@ dependencies {
 
     // Test
     testImplementation(Libraries.Test.junit)
-    androidTestImplementation(Libraries.Test.espresso)
     testImplementation(Libraries.Test.mockito)
+    androidTestImplementation(Libraries.Test.espressoCore)
+    androidTestImplementation(Libraries.Test.espressoContrib)
+    androidTestImplementation(Libraries.Test.runner)
+    androidTestImplementation(Libraries.Test.junitExt)
+    androidTestImplementation(Libraries.Test.testCore)
 
     // Other
     implementation(Libraries.Common.timber)

@@ -18,9 +18,11 @@ object Versions {
     const val constraintLayout = "2.0.4"
 
     const val junit = "4.13.2"
-    const val junitExt = "1.1.2"
-    const val espresso = "3.3.0"
+    const val junitExt = "1.1.3-alpha05"
+    const val runner = "1.4.0-alpha05"
+    const val espresso = "3.4.0-alpha05"
     const val mockito = "1.10.19"
+    const val testCore = "1.4.0-alpha05"
 }
 
 object Libraries {
@@ -70,9 +72,12 @@ object Libraries {
     }
 
     object Test {
+        const val testCore = "androidx.test:core:${Versions.testCore}"
         const val junit = "junit:junit:${Versions.junit}"
-        const val junitExt = "androidx.test.ext:junit${Versions.junitExt}"
-        const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+        const val junitExt = "androidx.test.ext:junit:${Versions.junitExt}"
+        const val runner = "androidx.test:runner:${Versions.runner}"
+        const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+        const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Versions.espresso}"
         const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     }
 }
