@@ -3,6 +3,7 @@ package io.imrekaszab.algorithms.data.service
 import androidx.annotation.VisibleForTesting
 import io.bloco.faker.Faker
 import io.imrekaszab.algorithms.data.model.sort.BubbleSort
+import io.imrekaszab.algorithms.data.model.sort.BucketSort
 import io.imrekaszab.algorithms.data.model.sort.CountingSort
 import io.imrekaszab.algorithms.data.model.sort.InsertionSort
 import io.imrekaszab.algorithms.data.model.sort.MergeSort
@@ -22,7 +23,8 @@ class MockAlgorithmFactory @Inject constructor(private val faker: Faker) {
         mergeSort(),
         quickSort(),
         countingSort(),
-        radixSort()
+        radixSort(),
+        bucketSort()
     )
 
     @VisibleForTesting
@@ -35,6 +37,7 @@ class MockAlgorithmFactory @Inject constructor(private val faker: Faker) {
     private fun quickSort() = QuickSort(getIntArray())
     private fun countingSort() = CountingSort(getIntArray())
     private fun radixSort() = RadixSort(intArrayOf(4725, 4586, 1330, 8792, 1594, 5729))
+    private fun bucketSort() = BucketSort(intArrayOf(54, 46, 83, 66, 95, 92, 43))
 
     @VisibleForTesting
     fun getIntArray() = IntRange(1, 10)
