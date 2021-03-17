@@ -1,4 +1,4 @@
-package io.imrekaszab.algorithms.data.model.stack
+package io.imrekaszab.algorithms.data.model.structure
 
 import java.util.LinkedList
 

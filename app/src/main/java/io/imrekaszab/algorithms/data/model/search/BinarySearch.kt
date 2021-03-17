@@ -46,13 +46,10 @@ class BinarySearch(array: IntArray) : SearchAlgorithm(array) {
             return -1
         }
         val midpoint = (start + end) / 2
-        println("midpoint = $midpoint")
-        return if (input[midpoint] == value) {
-            midpoint
-        } else if (input[midpoint] < value) {
-            recursiveBinarySearch(input, midpoint + 1, end, value)
-        } else {
-            recursiveBinarySearch(input, start, midpoint, value)
+        return when {
+            input[midpoint] == value -> midpoint
+            input[midpoint] < value -> recursiveBinarySearch(input, midpoint + 1, end, value)
+            else -> recursiveBinarySearch(input, start, midpoint, value)
         }
     }
 }
