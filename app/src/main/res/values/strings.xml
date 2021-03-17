@@ -24,5 +24,7 @@
     <string name="algorithm_list_item_radix">Radix sort</string>
     <string name="algorithm_list_item_stable_counting">Stable counting sort</string>
 
+    <string name="algorithm_list_item_binary_search">Binary search</string>
+
     <string name="details_sort_button_text">SORT</string>
 </resources>

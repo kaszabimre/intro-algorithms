@@ -33,7 +33,7 @@ fun TextView.bindPerformanceToTextView(performance: AlgorithmPerformance?) {
     setText(
         when (performance) {
             AlgorithmPerformance.CONSTANT -> R.string.algorithm_list_item_performance_constant
-            AlgorithmPerformance.LOGARITHMIC -> R.string.algorithm_list_item_performance_nlogn
+            AlgorithmPerformance.LOGARITHMIC -> R.string.algorithm_list_item_performance_logn
             AlgorithmPerformance.LINEAR -> R.string.algorithm_list_item_performance_linear
             AlgorithmPerformance.N_LOG_STAR_N -> R.string.algorithm_list_item_performance_nlogn
             AlgorithmPerformance.QUADRATIC -> R.string.algorithm_list_item_performance_quadratic

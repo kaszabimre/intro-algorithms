@@ -2,6 +2,7 @@ package io.imrekaszab.algorithms.data.service
 
 import io.imrekaszab.algorithms.data.model.Algorithm
 import io.imrekaszab.algorithms.data.model.AlgorithmHolder
+import io.imrekaszab.algorithms.data.model.search.SearchAlgorithm
 import io.imrekaszab.algorithms.data.model.sort.SortAlgorithm
 import io.imrekaszab.algorithms.utils.flowOf
 import kotlinx.coroutines.Dispatchers
@@ -37,10 +38,12 @@ class AlgorithmServiceImpl @Inject constructor(
 
     override suspend fun submit() = withContext(Dispatchers.Default) {
         val algorithm = algorithmHolder.getItem()
+        algorithm?.outputStateFlow = outputStateFlow
 
         if (algorithm is SortAlgorithm) {
-            algorithm.outputStateFlow = outputStateFlow
             algorithm.sort()
+        } else if (algorithm is SearchAlgorithm) {
+            algorithm.search()
         }
     }
 }
