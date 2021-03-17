@@ -12,22 +12,38 @@ class CountingSort(array: IntArray) : SortAlgorithm(array) {
 
     override suspend fun sort() {
         printCurrentState()
-        countingSort(intArray, 1, 10)
+        countingSort(intArray)
     }
 
-    private suspend fun countingSort(input: IntArray, min: Int, max: Int) {
-        val countArray = IntArray((max - min) + 1)
-        for (i in input.indices) {
-            countArray[input[i] - min]++
+    private suspend fun countingSort(arr: IntArray) {
+        val arrayLength = arr.size
+        if (arrayLength == 0) return
+        /** find maximum and minimum values  */
+        var max = arr[0]
+        var min = arr[0]
+        for (i in 1 until arrayLength) {
+            if (arr[i] > max) max = arr[i]
+            if (arr[i] < min) min = arr[i]
         }
-        var j = 0
-        for (i in min..max) {
-            while (countArray[i - min] > 0) {
-                input[j++] = i
-                countArray[i - min]--
+        val range = max - min + 1
+        val count = IntArray(range)
+        /** initialize the occurrence of each element in the count array  */
+        for (i in 0 until arrayLength) {
+            count[arr[i] - min]++
+        }
 
-                printCurrentState()
+        /** calculate sum of indexes  */
+        for (i in 1 until range) {
+            count[i] += count[i - 1]
+        }
+
+        /** modify original array according to the sum count  */
+        var j = 0
+        for (i in 0 until range) {
+            while (j < count[i]) {
+                arr[j++] = i + min
             }
         }
+        printCurrentState()
     }
 }
