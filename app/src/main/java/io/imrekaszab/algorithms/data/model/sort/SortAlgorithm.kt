@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 
 abstract class SortAlgorithm(val intArray: IntArray) : Algorithm() {
     override val type = AlgorithmType.SORT
-    lateinit var outputStateFlow: MutableStateFlow<String>
 
     abstract suspend fun sort()
 
